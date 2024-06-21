@@ -32,7 +32,37 @@ a{
     
 }
 
-
+.posts{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 20px;
+    ul{
+        list-style-type: none;
+        li{
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,.1);
+            h2{
+                margin-bottom: 10px;
+            }
+            p{
+                margin-bottom: 10px;
+            }
+            a{
+                background-color: #333;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 5px;
+                text-decoration: none;
+                display: inline-block;
+            }
+        }
+    }
+ 
+}
 footer{
     width: 100%;
     position: fixed;

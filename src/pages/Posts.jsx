@@ -23,7 +23,7 @@ useEffect(() => {
                 <ul>
                 {posts.map(p => (
                     <li key={`posts${p.id}`}>
-                        <Link to={`/posts/${p.id}`} state={{ posts: p }}>{p.title}</Link>
+                        <Link to={`/posts/${p.slug}`} state={{ posts: p }}>{p.title}</Link>
                     </li>
                 ))}
             </ul>

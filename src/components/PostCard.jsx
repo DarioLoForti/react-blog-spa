@@ -1,5 +1,5 @@
 
-export default function({image, title, content, tags, published}){
+export default function({image, slug, title, content, tags, published}){
 
     return (
         <div className={`cards ${published ? 'published' : ''}`}>
