@@ -10,24 +10,26 @@ export default function(){
 
     const [post, setPost] = useState(null);
 
-    useEffect(() => {
-        setPost(null);
+    const fetchPost = async () => {
         const url = `${apiUrl}/posts/${slug}`;
-        axios.get(url)
-            .then(({data}) => setPost(data.post))
-    },[slug]); 
-    const p = post;
+        const { data: p } = await axios.get(url);
+            setPost(p);
+            console.log(p);
+    }
+
+    useEffect(() => {
+        fetchPost();
+    },[]); 
+
+    
 
     return(<>
-        {p === null ? <span>loading</span> :
-            
-            <PostCard
-                image={p.image}
-                title={p.title}
-                content={p.content}
-                tags={p.tags.map(i => i.name)}
-                published={p.published}
-            />
+        {post === null ? <span>loading</span> :
+            <div>
+                <h1>{ post.title }</h1>
+                <img src={post.image} alt={post.title} />
+                <p>{post.content}</p>
+            </div>
         }
     </>)
 }
